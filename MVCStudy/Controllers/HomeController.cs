@@ -21,8 +21,9 @@ namespace MVCStudy.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            ViewBag.Ge = "dsdfs";
-            return View(myProduct);
+            ViewBag.Controller = "Home";
+            ViewBag.Action = "Index";
+            return View("ActionName");
         }
     }
 }
