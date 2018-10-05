@@ -88,6 +88,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.min-3.3.7.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="文档\ASP.Net MVC心得.txt" />
