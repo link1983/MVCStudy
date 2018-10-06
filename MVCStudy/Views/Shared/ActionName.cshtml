@@ -21,6 +21,32 @@
                 <p>The Controller Name is:@ViewBag.Controller . </p>
                 <p>The Actione Name is:@ViewBag.Action .</p>
             </div>
+            <div class="panel-heading">
+                <h1 class="panel-title">搜索文件</h1>
+            </div>
+            <div class="panel-body">
+             <form class="form-inline" action="~/Home/Index" method="post">
+                 <input id="Text1" type="text" name="keyword" class="text-primary"/>
+                 <input id="Button1" type="submit"  value="搜索" class="btn btn-primary"/>
+             </form>
+            </div>
+            <div class="panel-heading panel-info">
+                <h1 class="panel-title">文件列表</h1>
+            </div>
+            <div class="panel-body">
+                @foreach (MVCStudy.Models.Files f in (List<MVCStudy.Models.Files>)ViewBag.ListFiles)
+                {
+                   <p>@f.FullName</p>
+                }
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    @for (int i = 0; i < ViewBag.pages; i++)
+                    {
+                    <li><a href="~/Home/Index/?pagesall=@ViewBag.pages&page=@(i+1)&key=@ViewBag.keyword">@(i+1)</a></li>
+                    }
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </div>
 
         </div>
     </div>
